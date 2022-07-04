@@ -1,7 +1,7 @@
+https://chadhgy.github.io/blog/tags/index.html
+https://chadhgy.github.io/blog/categories/index.html
 https://chadhgy.github.io/blog/vscode-setup-x11/
 https://chadhgy.github.io/blog/abtest101/
-https://chadhgy.github.io/blog/categories/index.html
-https://chadhgy.github.io/blog/tags/index.html
 https://chadhgy.github.io/blog/404.html
 https://chadhgy.github.io/blog
 https://chadhgy.github.io/blog/tags/data-science/

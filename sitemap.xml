@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://chadhgy.github.io/blog/tags/index.html</loc>
+    
+    <lastmod>2022-07-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://chadhgy.github.io/blog/categories/index.html</loc>
+    
+    <lastmod>2022-07-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://chadhgy.github.io/blog/vscode-setup-x11/</loc>
     
     <lastmod>2022-07-04</lastmod>
@@ -14,24 +32,6 @@
     <loc>https://chadhgy.github.io/blog/abtest101/</loc>
     
     <lastmod>2022-05-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://chadhgy.github.io/blog/categories/index.html</loc>
-    
-    <lastmod>2022-05-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://chadhgy.github.io/blog/tags/index.html</loc>
-    
-    <lastmod>2022-05-20</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
