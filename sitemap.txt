@@ -1,0 +1,14 @@
+https://chadhgy.github.io/blog/vscode-setup-x11/
+https://chadhgy.github.io/blog/abtest101/
+https://chadhgy.github.io/blog/categories/index.html
+https://chadhgy.github.io/blog/tags/index.html
+https://chadhgy.github.io/blog/404.html
+https://chadhgy.github.io/blog
+https://chadhgy.github.io/blog/tags/data-science/
+https://chadhgy.github.io/blog/tags/mle/
+https://chadhgy.github.io/blog/tags/vscode/
+https://chadhgy.github.io/blog/tags/linux/
+https://chadhgy.github.io/blog/tags/macOS/
+https://chadhgy.github.io/blog/tags/X11/
+https://chadhgy.github.io/blog/categories/statistics/
+https://chadhgy.github.io/blog/categories/tools/

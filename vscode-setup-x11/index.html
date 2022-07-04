@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"chadhgy.github.io","root":"/blog/","images":"/blog/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/blog/js/config.js"></script>
+
+    <meta name="description" content="VScode is one of the most powerful tools for all programmers, which integrates perfect remote connection for all types of servers (Linux&#x2F;Mac&#x2F;Windows). Though you may have worked fluently wit">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Setup VScode with X11 in 5 Minutes">
+<meta property="og:url" content="https://chadhgy.github.io/blog/vscode-setup-x11/index.html">
+<meta property="og:site_name" content="Chad&#39;s ML Blog">
+<meta property="og:description" content="VScode is one of the most powerful tools for all programmers, which integrates perfect remote connection for all types of servers (Linux&#x2F;Mac&#x2F;Windows). Though you may have worked fluently wit">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://chadhgy.github.io/blog/vscode-setup-x11/1.3-config.png">
+<meta property="og:image" content="https://chadhgy.github.io/blog/vscode-setup-x11/2.1-install-remote.png">
+<meta property="og:image" content="https://chadhgy.github.io/blog/vscode-setup-x11/2.2.1-user-local-setting.png">
+<meta property="og:image" content="https://chadhgy.github.io/blog/vscode-setup-x11/2.2.2-remote-setting.png">
+<meta property="og:image" content="https://chadhgy.github.io/blog/vscode-setup-x11/2.3-test.png">
+<meta property="og:image" content="https://chadhgy.github.io/blog/vscode-setup-x11/2.4-test-xclock.png">
+<meta property="article:published_time" content="2022-06-29T03:01:10.214Z">
+<meta property="article:modified_time" content="2022-07-04T08:11:02.815Z">
+<meta property="article:author" content="Chad Yang">
+<meta property="article:tag" content="vscode">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="macOS">
+<meta property="article:tag" content="X11">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://chadhgy.github.io/blog/vscode-setup-x11/1.3-config.png">
+
+
+<link rel="canonical" href="https://chadhgy.github.io/blog/vscode-setup-x11/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://chadhgy.github.io/blog/vscode-setup-x11/","path":"vscode-setup-x11/","title":"How to Setup VScode with X11 in 5 Minutes"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>How to Setup VScode with X11 in 5 Minutes | Chad's ML Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YRTD4S16KV"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-YRTD4S16KV","only_pageview":false}</script>
+  <script src="/blog/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/blog/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Chad's ML Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">A curated list of machine learning research and engineering.</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-tags"><a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Setup-key-based-authentication"><span class="nav-number">1.</span> <span class="nav-text">1. Setup key-based authentication</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-Create-your-local-SSH-key-pair"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 Create your local SSH key pair</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-Register-your-ssh-key-to-the-remote-server"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 Register your ssh key to the remote server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-Configure-VScode-ssh-connection"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 Configure VScode ssh connection</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-Test-the-key-based-authentication"><span class="nav-number">1.4.</span> <span class="nav-text">1.4 Test the key-based authentication</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Setup-X11-connection"><span class="nav-number">2.</span> <span class="nav-text">2. Setup X11 connection</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-Install-remote-X11-extension-from-the-marketplace"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 Install remote X11 extension from the marketplace</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-Configure-X11-settings"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 Configure X11 settings</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-1-User-Local-Setting"><span class="nav-number">2.2.1.</span> <span class="nav-text">2.2.1 User (Local) Setting</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-2-Remote-Server-Setting"><span class="nav-number">2.2.2.</span> <span class="nav-text">2.2.2 Remote (Server) Setting</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-Test-the-X11-host-connection"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 Test the X11 host connection</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-Install-the-local-Xserver"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 Install the local Xserver</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-Final-test-with-xclock"><span class="nav-number">2.5.</span> <span class="nav-text">2.5 Final test with xclock</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Chad Yang</p>
+  <div class="site-description" itemprop="description">ML scientist, phd, traveler</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/blog/archives/">
+          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/blog/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/blog/tags/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="/blog/chadyang.hc@gmail.com" title="E-Mail → chadyang.hc@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2luL2NoYWQteWFuZy8=" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;chad-yang&#x2F;"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9jaGFkeWFuZ19oYw==" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;chadyang_hc"><i class="fab fa-twitter fa-fw"></i>Twitter</span>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://chadhgy.github.io/blog/vscode-setup-x11/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="Chad Yang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chad's ML Blog">
+      <meta itemprop="description" content="ML scientist, phd, traveler">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="How to Setup VScode with X11 in 5 Minutes | Chad's ML Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          How to Setup VScode with X11 in 5 Minutes
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-07-04 16:11:02" itemprop="dateModified" datetime="2022-07-04T16:11:02+08:00">2022-07-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/tools/" itemprop="url" rel="index"><span itemprop="name">tools</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/blog/vscode-setup-x11/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="vscode-setup-x11/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>2.9k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><span class="exturl" data-url="aHR0cHM6Ly9jb2RlLnZpc3VhbHN0dWRpby5jb20v">VScode</span> is one of the most powerful tools for all programmers, which integrates perfect remote connection for all types of servers (Linux&#x2F;Mac&#x2F;Windows). Though you may have worked fluently with a pure command-line interface, sometimes a few GUIs could be handy and save your day. In this post, I’ll show you how I forward the GUIs using X11 forwarding.</p>
+<blockquote>
+<p>This post is for: </p>
+<ul>
+<li>People would like to access GUIs in their local laptop&#x2F;machine from a remote server.</li>
+</ul>
+</blockquote>
+<span id="more"></span>
+<blockquote>
+<p>Prerequisite:</p>
+<ul>
+<li>VSCode installed</li>
+<li>Remote-ssh extension installed</li>
+</ul>
+<p>Environment:</p>
+<ul>
+<li>Local: MacBookAir M1 2021 (BigSur 11.3.1)</li>
+<li>Remote: Ubuntu 20.04.4</li>
+</ul>
+</blockquote>
+<h2 id="1-Setup-key-based-authentication"><a href="#1-Setup-key-based-authentication" class="headerlink" title="1. Setup key-based authentication"></a>1. Setup key-based authentication</h2><p>To enable the VScode integrated X11 server connection, you must use the <span class="exturl" data-url="aHR0cHM6Ly9jb2RlLnZpc3VhbHN0dWRpby5jb20vZG9jcy9yZW1vdGUvdHJvdWJsZXNob290aW5nI19xdWljay1zdGFydC11c2luZy1zc2gta2V5cw==">key-based authentication</span> to connect to your server. If you have already set up this before, please directly head to the next step.</p>
+<h3 id="1-1-Create-your-local-SSH-key-pair"><a href="#1-1-Create-your-local-SSH-key-pair" class="headerlink" title="1.1 Create your local SSH key pair"></a>1.1 Create your local SSH key pair</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">ssh-keygen -t rsa -b <span class="token number">4096</span> -f <span class="token environment constant">$HOME</span>/.ssh/id_rsa<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>This will generate ssh <code>private-key</code> at <code> $HOME/.ssh/id_rsa</code> and <code>public-key</code> at <code>$HOME/.ssh/id_rsa.pub</code>.</p>
+<h3 id="1-2-Register-your-ssh-key-to-the-remote-server"><a href="#1-2-Register-your-ssh-key-to-the-remote-server" class="headerlink" title="1.2 Register your ssh key to the remote server"></a>1.2 Register your ssh key to the remote server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token assign-left variable">PUBKEYPATH</span><span class="token operator">=</span><span class="token string">"<span class="token environment constant">$HOME</span>/.ssh/id_rsa.pub"</span> <span class="token comment"># the location of you ssh public key, should been generated in Step 1.1</span>
+<span class="token assign-left variable">HOST_NAME</span><span class="token operator">=</span><span class="token string">"192.168.1.1"</span> <span class="token comment"># remote server address</span>
+<span class="token assign-left variable">HOST_PORT</span><span class="token operator">=</span><span class="token string">"22"</span> <span class="token comment"># remote server port, if not configured leave it 22</span>
+<span class="token assign-left variable">USER_AT_HOST</span><span class="token operator">=</span><span class="token string">"XXXX"</span> <span class="token comment"># your user name to log in remote server</span>
+ssh-copy-id -i <span class="token string">"<span class="token variable">$PUBKEYPATH</span>"</span> -p <span class="token string">"<span class="token variable">$HOST_PORT</span>"</span> <span class="token string">"<span class="token variable">$USER_AT_HOST</span>@<span class="token variable">$HOST_NAME</span>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>If you type all the information correctly, the server will ask you to type the password once.</p>
+<h3 id="1-3-Configure-VScode-ssh-connection"><a href="#1-3-Configure-VScode-ssh-connection" class="headerlink" title="1.3 Configure VScode ssh connection"></a>1.3 Configure VScode ssh connection</h3><p>Type <code>F1</code>&gt;<code>ssh</code> to VScode’s ssh configuration<br><img data-src="/blog/vscode-setup-x11/1.3-config.png"><br>If you don’t see <code>HOST_NAME</code> that looks similar to your remote host, paste below to the configuration file (<strong>Replace with your information</strong>):</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">Host My<span class="token punctuation">-</span>Remote<span class="token punctuation">-</span>Host
+    HostName 192.168.1.1
+    User XXXX
+    Port 22
+    IdentityFile ~/.ssh/id<span class="token punctuation">-</span>rsa.pub
+    ForwardAgent yes
+    ForwardX11 yes
+    ForwardX11Trusted yes<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="1-4-Test-the-key-based-authentication"><a href="#1-4-Test-the-key-based-authentication" class="headerlink" title="1.4 Test the key-based authentication"></a>1.4 Test the key-based authentication</h3><p>Reconnect to the remote server. Now you should be able to log in without typing password.</p>
+<h2 id="2-Setup-X11-connection"><a href="#2-Setup-X11-connection" class="headerlink" title="2. Setup X11 connection"></a>2. Setup X11 connection</h2><p>Now let’s start configuring the X11.</p>
+<h3 id="2-1-Install-remote-X11-extension-from-the-marketplace"><a href="#2-1-Install-remote-X11-extension-from-the-marketplace" class="headerlink" title="2.1 Install remote X11 extension from the marketplace"></a>2.1 Install remote X11 extension from the marketplace</h3><p>There are two extensions:</p>
+<ul>
+<li>Remote X11</li>
+<li>Remote X11 (ssh)<br>For ease, we just install both on the local and remote machine here.<br><img data-src="/blog/vscode-setup-x11/2.1-install-remote.png"></li>
+</ul>
+<h3 id="2-2-Configure-X11-settings"><a href="#2-2-Configure-X11-settings" class="headerlink" title="2.2 Configure X11 settings"></a>2.2 Configure X11 settings</h3><p>Now, use the remote-ssh extension to connect to the remote server. It should open up a new window. Open the marketplace of this new window, find <strong>Remote X11 (ssh)</strong>, right-click and open the extension setting.</p>
+<h4 id="2-2-1-User-Local-Setting"><a href="#2-2-1-User-Local-Setting" class="headerlink" title="2.2.1 User (Local) Setting"></a>2.2.1 User (Local) Setting</h4><p>For user setting, change the Authentication Method to <code>keyFile</code>. Also, provide the correct <code>private-key</code> path in<br><img data-src="/blog/vscode-setup-x11/2.2.1-user-local-setting.png"></p>
+<h4 id="2-2-2-Remote-Server-Setting"><a href="#2-2-2-Remote-Server-Setting" class="headerlink" title="2.2.2 Remote (Server) Setting"></a>2.2.2 Remote (Server) Setting</h4><p>Then, switch to the Remote tab. Scroll down and find <code>Remote.X11.ssh:Host</code> and <code>Remote.X11.ssh:Port</code>. Make sure these two match your server connection method.<br><img data-src="/blog/vscode-setup-x11/2.2.2-remote-setting.png"></p>
+<h3 id="2-3-Test-the-X11-host-connection"><a href="#2-3-Test-the-X11-host-connection" class="headerlink" title="2.3 Test the X11 host connection"></a>2.3 Test the X11 host connection</h3><p>Close the window and reconnect to the remote server. Open the Remote X11 (ssh) tab, if you see the below information, congratulation, you have successfully configured the X11 settings.<br><img data-src="/blog/vscode-setup-x11/2.3-test.png"></p>
+<h3 id="2-4-Install-the-local-Xserver"><a href="#2-4-Install-the-local-Xserver" class="headerlink" title="2.4 Install the local Xserver"></a>2.4 Install the local Xserver</h3><p>Finally, to successfully “Draw” the received X11 locally, you’ll need to install the Xserver. Depending on your local environment, there are different open-source projects you can choose:</p>
+<ul>
+<li>MacOS: <span class="exturl" data-url="aHR0cHM6Ly93d3cueHF1YXJ0ei5vcmcv">Xquartz</span></li>
+<li>Windows: <span class="exturl" data-url="aHR0cDovL3d3dy5zdHJhaWdodHJ1bm5pbmcuY29tL1htaW5nTm90ZXMv">Xming</span></li>
+</ul>
+<h3 id="2-5-Final-test-with-xclock"><a href="#2-5-Final-test-with-xclock" class="headerlink" title="2.5 Final test with xclock"></a>2.5 Final test with xclock</h3><p>After installing the Xserver, our final step would be testing a remote GUI.</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">xclock<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>You should see the remote GUI successfully forward to your local machine.<br><img data-src="/blog/vscode-setup-x11/2.4-test-xclock.png"></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/vscode/" rel="tag"># vscode</a>
+              <a href="/blog/tags/linux/" rel="tag"># linux</a>
+              <a href="/blog/tags/macOS/" rel="tag"># macOS</a>
+              <a href="/blog/tags/X11/" rel="tag"># X11</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/blog/abtest101/" rel="prev" title="A/B test 101">
+                  <i class="fa fa-chevron-left"></i> A/B test 101
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chad Yang</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Symbols count total">6k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">6 mins.</span>
+  </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/blog/js/comments.js"></script><script src="/blog/js/utils.js"></script><script src="/blog/js/motion.js"></script><script src="/blog/js/schemes/muse.js"></script><script src="/blog/js/next-boot.js"></script><script src="/blog/js/bookmark.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/blog/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/blog/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":false,"archive":false,"delay":true,"timeout":3000,"priority":true,"url":"https://chadhgy.github.io/blog/vscode-setup-x11/"}</script>
+  <script src="/blog/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"https-chadhgy-github-io","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/blog/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>
