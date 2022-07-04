@@ -56,20 +56,6 @@
 
   
   <url>
-    <loc>https://chadhgy.github.io/blog/tags/data-science/</loc>
-    <lastmod>2022-07-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://chadhgy.github.io/blog/tags/mle/</loc>
-    <lastmod>2022-07-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://chadhgy.github.io/blog/tags/vscode/</loc>
     <lastmod>2022-07-04</lastmod>
     <changefreq>weekly</changefreq>
@@ -97,17 +83,31 @@
     <priority>0.2</priority>
   </url>
   
-
-  
   <url>
-    <loc>https://chadhgy.github.io/blog/categories/statistics/</loc>
+    <loc>https://chadhgy.github.io/blog/tags/data-science/</loc>
     <lastmod>2022-07-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
+    <loc>https://chadhgy.github.io/blog/tags/mle/</loc>
+    <lastmod>2022-07-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+
+  
+  <url>
     <loc>https://chadhgy.github.io/blog/categories/tools/</loc>
+    <lastmod>2022-07-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://chadhgy.github.io/blog/categories/statistics/</loc>
     <lastmod>2022-07-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
