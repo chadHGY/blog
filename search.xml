@@ -1,6 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>A/B test 101</title>
+    <url>/blog/abtest101/</url>
+    <content><![CDATA[<h2 id="Goal"><a href="#Goal" class="headerlink" title="Goal"></a>Goal</h2><p>Compare the two versions (A&amp;B) of a variable to find out which performs better in a controlled environment.</p>
+<span id="more"></span>
+<h2 id="Some-Definitions"><a href="#Some-Definitions" class="headerlink" title="Some Definitions"></a>Some Definitions</h2><p><strong>population:</strong> all the customers buying your product<br><strong>sample:</strong> number of customers that participated in the test</p>
+<h2 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h2><ol>
+<li><p>Setup Objective: The key Metric to measure your testing target (User satisfaction &#x2F; Conversion Rate … etc)</p>
+</li>
+<li><p>Make Hypothesis</p>
+<ul>
+<li>Null hypothesis $H_{0}$<br>Null hypothesis states that sample observations result purely from chance. Ex: ”there is no difference in the customer satisfaction processed by A and B”</li>
+<li>Alternative Hypothesis $H_{a}$<br>The testing target. Ex: “Customer satisfaction processed by A is higher than processed by B”.</li>
+</ul>
+</li>
+<li><p>Create Control Group and Test Group: Randomly select from population,  divide into 2 groups:</p>
+<ul>
+<li>Control Group: Use old setting, A</li>
+<li>Test (Variant) Group: Use new setting, B</li>
+</ul>
+</li>
+<li><p>Conduct test and Collect Data. There could be two bias from this stage:</p>
+<ul>
+<li>Sampling Bias: Random sampling is important in hypothesis testing because it eliminates sampling bias, and <strong>it’s important to eliminate bias because you want the results of your A&#x2F;B test to be representative of the entire population rather than the sample itself</strong></li>
+<li>Under Coverage Bias: we would encounter this bias when sample too few observations</li>
+</ul>
+</li>
+<li><p>Calculate Statistical Significance<br>If we observe a difference like “the average of A’s satisfaction score is 3.9 and B’s is 4.2”, <em>Don’t toast too early</em> 😂  We should always run a <span class="exturl" data-url="aHR0cHM6Ly93d3cuc29jc2Npc3RhdGlzdGljcy5jb20vdGVzdHMvc3R1ZGVudHR0ZXN0L2RlZmF1bHQyLmFzcHg=">two-sample T-Test</span> to get statistical proof of our experiment.</p>
+<ol>
+<li><strong>Significance level (</strong>$\alpha$<strong>, setup before the test):</strong> The significance level is the probability of rejecting the null hypothesis when it is true. Generally, we use the significance value of 0.05.</li>
+<li><strong>P-Value ($p$, calculated):</strong> It is the probability that the difference between the two values is just because of random chance. P-value is evidence against the null hypothesis. The smaller the p-value stronger the chances to reject the $H_{0}$. For the significance level of 0.05, if the p-value is lesser than it hence we can reject the null hypothesis (<em>Reject</em> hypothesis that B has no difference between A)</li>
+<li><strong>Confidence interval:</strong> The confidence interval is an observed range in which a given percentage of test outcomes fall. We manually select our desired confidence level at the beginning of our test. Generally, we take a 95% confidence interval (<strong>$p$&#x3D;0.05</strong>)</li>
+<li>One-tailed or two-tailed hypothesis?<br> two-tailed, because we want to test whether two distribution (A’s &#x2F; B’s) is different</li>
+</ol>
+</li>
+<li><p>Read → Explain → Action</p>
+</li>
+</ol>
+<h2 id="Common-Mistakes"><a href="#Common-Mistakes" class="headerlink" title="Common Mistakes"></a>Common Mistakes</h2><ul>
+<li>Works best when testing <strong>Incremental Changes</strong> (UX changes, new features). Doesn’t work well when testing major changes, new branding, or completely new UX.</li>
+<li><strong>Invalid hypothesis</strong>: The whole experiment depends on one thing i.e the hypothesis. What should be changed? Why should it be changed, what the expected outcome is, and so on? If you start with the wrong hypothesis, the probability of the test succeeding, decreases</li>
+<li><strong>Testing too Many Elements Together:</strong> Industry experts caution against running too many tests at the same time. Testing too many elements together makes it difficult to pinpoint which element influenced the success or failure. Thus, prioritization of tests is indispensable for successful A&#x2F;B testing</li>
+<li><strong>Ignoring Statistical Significance:</strong> It doesn’t matter what you feel about the test. Irrespective of everything, whether the test succeeds or fails, allow it to run through its entire course so that it reaches its statistical significance</li>
+<li><strong>Not considering the external factor:</strong> Tests should be run in comparable periods to produce meaningful results. For example, it is unfair to compare website traffic on the days when it gets the highest traffic to the days when it witnesses the lowest traffic because of external factors such as sale or holidays</li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cuc2VsZG9uLmlvL2EtYi10ZXN0aW5nLWZvci1tYWNoaW5lLWxlYXJuaW5nIzp+OnRleHQ9QSUyRkIlMjB0ZXN0aW5nJTIwaXMlMjBhbixjYW1wYWlnbnMlMjBhbmQlMjBnb2FsJTIwY29udmVyc2lvbiUyMHJhdGVzLg==">A&#x2F;B Testing for Machine Learning</span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cuYW5hbHl0aWNzdmlkaHlhLmNvbS9ibG9nLzIwMjAvMTAvYWItdGVzdGluZy1kYXRhLXNjaWVuY2Uv">A&#x2F;B Testing for Data Science using Python – A Must-Read Guide for Data Scientists</span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cuc29jc2Npc3RhdGlzdGljcy5jb20vdGVzdHMvc3R1ZGVudHR0ZXN0L2RlZmF1bHQyLmFzcHg=">T-Test Calculator for 2 Independent Means</span></li>
+</ol>
+]]></content>
+      <categories>
+        <category>statistics</category>
+      </categories>
+      <tags>
+        <tag>data science</tag>
+        <tag>mle</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>How to Setup VScode with X11 in 5 Minutes</title>
     <url>/blog/vscode-setup-x11/</url>
     <content><![CDATA[<p><span class="exturl" data-url="aHR0cHM6Ly9jb2RlLnZpc3VhbHN0dWRpby5jb20v">VScode</span> is one of the most powerful tools for all programmers, which integrates perfect remote connection for all types of servers (Linux&#x2F;Mac&#x2F;Windows). Though you may have worked fluently with a pure command-line interface, sometimes a few GUIs could be handy and save your day. In this post, I’ll show you how I forward the GUIs using X11 forwarding.</p>
@@ -70,65 +129,6 @@ ssh-copy-id -i <span class="token string">"<span class="token variable">$PUBKEYP
         <tag>linux</tag>
         <tag>macOS</tag>
         <tag>X11</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>A/B test 101</title>
-    <url>/blog/abtest101/</url>
-    <content><![CDATA[<h2 id="Goal"><a href="#Goal" class="headerlink" title="Goal"></a>Goal</h2><p>Compare the two versions (A&amp;B) of a variable to find out which performs better in a controlled environment.</p>
-<span id="more"></span>
-<h2 id="Some-Definitions"><a href="#Some-Definitions" class="headerlink" title="Some Definitions"></a>Some Definitions</h2><p><strong>population:</strong> all the customers buying your product<br><strong>sample:</strong> number of customers that participated in the test</p>
-<h2 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h2><ol>
-<li><p>Setup Objective: The key Metric to measure your testing target (User satisfaction &#x2F; Conversion Rate … etc)</p>
-</li>
-<li><p>Make Hypothesis</p>
-<ul>
-<li>Null hypothesis $H_{0}$<br>Null hypothesis states that sample observations result purely from chance. Ex: ”there is no difference in the customer satisfaction processed by A and B”</li>
-<li>Alternative Hypothesis $H_{a}$<br>The testing target. Ex: “Customer satisfaction processed by A is higher than processed by B”.</li>
-</ul>
-</li>
-<li><p>Create Control Group and Test Group: Randomly select from population,  divide into 2 groups:</p>
-<ul>
-<li>Control Group: Use old setting, A</li>
-<li>Test (Variant) Group: Use new setting, B</li>
-</ul>
-</li>
-<li><p>Conduct test and Collect Data. There could be two bias from this stage:</p>
-<ul>
-<li>Sampling Bias: Random sampling is important in hypothesis testing because it eliminates sampling bias, and <strong>it’s important to eliminate bias because you want the results of your A&#x2F;B test to be representative of the entire population rather than the sample itself</strong></li>
-<li>Under Coverage Bias: we would encounter this bias when sample too few observations</li>
-</ul>
-</li>
-<li><p>Calculate Statistical Significance<br>If we observe a difference like “the average of A’s satisfaction score is 3.9 and B’s is 4.2”, <em>Don’t toast too early</em> 😂  We should always run a <span class="exturl" data-url="aHR0cHM6Ly93d3cuc29jc2Npc3RhdGlzdGljcy5jb20vdGVzdHMvc3R1ZGVudHR0ZXN0L2RlZmF1bHQyLmFzcHg=">two-sample T-Test</span> to get statistical proof of our experiment.</p>
-<ol>
-<li><strong>Significance level (</strong>$\alpha$<strong>, setup before the test):</strong> The significance level is the probability of rejecting the null hypothesis when it is true. Generally, we use the significance value of 0.05.</li>
-<li><strong>P-Value ($p$, calculated):</strong> It is the probability that the difference between the two values is just because of random chance. P-value is evidence against the null hypothesis. The smaller the p-value stronger the chances to reject the $H_{0}$. For the significance level of 0.05, if the p-value is lesser than it hence we can reject the null hypothesis (<em>Reject</em> hypothesis that B has no difference between A)</li>
-<li><strong>Confidence interval:</strong> The confidence interval is an observed range in which a given percentage of test outcomes fall. We manually select our desired confidence level at the beginning of our test. Generally, we take a 95% confidence interval (<strong>$p$&#x3D;0.05</strong>)</li>
-<li>One-tailed or two-tailed hypothesis?<br> two-tailed, because we want to test whether two distribution (A’s &#x2F; B’s) is different</li>
-</ol>
-</li>
-<li><p>Read → Explain → Action</p>
-</li>
-</ol>
-<h2 id="Common-Mistakes"><a href="#Common-Mistakes" class="headerlink" title="Common Mistakes"></a>Common Mistakes</h2><ul>
-<li>Works best when testing <strong>Incremental Changes</strong> (UX changes, new features). Doesn’t work well when testing major changes, new branding, or completely new UX.</li>
-<li><strong>Invalid hypothesis</strong>: The whole experiment depends on one thing i.e the hypothesis. What should be changed? Why should it be changed, what the expected outcome is, and so on? If you start with the wrong hypothesis, the probability of the test succeeding, decreases</li>
-<li><strong>Testing too Many Elements Together:</strong> Industry experts caution against running too many tests at the same time. Testing too many elements together makes it difficult to pinpoint which element influenced the success or failure. Thus, prioritization of tests is indispensable for successful A&#x2F;B testing</li>
-<li><strong>Ignoring Statistical Significance:</strong> It doesn’t matter what you feel about the test. Irrespective of everything, whether the test succeeds or fails, allow it to run through its entire course so that it reaches its statistical significance</li>
-<li><strong>Not considering the external factor:</strong> Tests should be run in comparable periods to produce meaningful results. For example, it is unfair to compare website traffic on the days when it gets the highest traffic to the days when it witnesses the lowest traffic because of external factors such as sale or holidays</li>
-</ul>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
-<li><span class="exturl" data-url="aHR0cHM6Ly93d3cuc2VsZG9uLmlvL2EtYi10ZXN0aW5nLWZvci1tYWNoaW5lLWxlYXJuaW5nIzp+OnRleHQ9QSUyRkIlMjB0ZXN0aW5nJTIwaXMlMjBhbixjYW1wYWlnbnMlMjBhbmQlMjBnb2FsJTIwY29udmVyc2lvbiUyMHJhdGVzLg==">A&#x2F;B Testing for Machine Learning</span></li>
-<li><span class="exturl" data-url="aHR0cHM6Ly93d3cuYW5hbHl0aWNzdmlkaHlhLmNvbS9ibG9nLzIwMjAvMTAvYWItdGVzdGluZy1kYXRhLXNjaWVuY2Uv">A&#x2F;B Testing for Data Science using Python – A Must-Read Guide for Data Scientists</span></li>
-<li><span class="exturl" data-url="aHR0cHM6Ly93d3cuc29jc2Npc3RhdGlzdGljcy5jb20vdGVzdHMvc3R1ZGVudHR0ZXN0L2RlZmF1bHQyLmFzcHg=">T-Test Calculator for 2 Independent Means</span></li>
-</ol>
-]]></content>
-      <categories>
-        <category>statistics</category>
-      </categories>
-      <tags>
-        <tag>data science</tag>
-        <tag>mle</tag>
       </tags>
   </entry>
 </search>

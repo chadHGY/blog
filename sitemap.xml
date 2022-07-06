@@ -49,50 +49,50 @@
 
   <url>
     <loc>https://chadhgy.github.io/blog</loc>
-    <lastmod>2022-07-04</lastmod>
+    <lastmod>2022-07-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
-    <loc>https://chadhgy.github.io/blog/tags/vscode/</loc>
-    <lastmod>2022-07-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://chadhgy.github.io/blog/tags/linux/</loc>
-    <lastmod>2022-07-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://chadhgy.github.io/blog/tags/macOS/</loc>
-    <lastmod>2022-07-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://chadhgy.github.io/blog/tags/X11/</loc>
-    <lastmod>2022-07-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://chadhgy.github.io/blog/tags/data-science/</loc>
-    <lastmod>2022-07-04</lastmod>
+    <lastmod>2022-07-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://chadhgy.github.io/blog/tags/mle/</loc>
-    <lastmod>2022-07-04</lastmod>
+    <lastmod>2022-07-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://chadhgy.github.io/blog/tags/vscode/</loc>
+    <lastmod>2022-07-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://chadhgy.github.io/blog/tags/linux/</loc>
+    <lastmod>2022-07-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://chadhgy.github.io/blog/tags/macOS/</loc>
+    <lastmod>2022-07-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://chadhgy.github.io/blog/tags/X11/</loc>
+    <lastmod>2022-07-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -100,15 +100,15 @@
 
   
   <url>
-    <loc>https://chadhgy.github.io/blog/categories/tools/</loc>
-    <lastmod>2022-07-04</lastmod>
+    <loc>https://chadhgy.github.io/blog/categories/statistics/</loc>
+    <lastmod>2022-07-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://chadhgy.github.io/blog/categories/statistics/</loc>
-    <lastmod>2022-07-04</lastmod>
+    <loc>https://chadhgy.github.io/blog/categories/tools/</loc>
+    <lastmod>2022-07-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
